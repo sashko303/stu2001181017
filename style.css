@@ -20,7 +20,27 @@ body {
     position: relative; /* За да се позиционира overlay върху него */
     z-index: 0; /* По-нисък z-index от всички останали елементи */
 }
+@media only screen and (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Промяна на структурата на колони */
+        align-items: center;
+    }
 
+    .box {
+        width: 90%; /* Кутиите стават по-широки на мобилни устройства */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        font-size: 16px; /* По-малък шрифт за мобилни устройства */
+    }
+
+    .box {
+        width: 100%; /* На много малки екрани кутиите заемат 100% ширина */
+        margin: 5px 0;
+    }
+}
 /* Прозрачен overlay слой */
 .overlay {
     position: fixed; /* Фиксирана позиция, за да покрива целия екран */
