@@ -1,0 +1,628 @@
+/* Глобални стилове */
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Основен стил на body */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('Prob.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    position: relative; /* За да се позиционира overlay върху него */
+    z-index: 0; /* По-нисък z-index от всички останали елементи */
+}
+
+/* Прозрачен overlay слой */
+.overlay {
+    position: fixed; /* Фиксирана позиция, за да покрива целия екран */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Черен фон с прозрачност 50% */
+    z-index: 1; /* Над фона, но под основното съдържание */
+}
+
+/* Стилизация на навигационното меню */
+nav {
+    background-color: rgba(51, 51, 51, 0.8);
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Над overlay слоя */
+}
+
+nav a {
+    display: inline-block;
+    color: #f2f2f2;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+/* Основен стил за съдържанието */
+.main {
+    width: 100%;
+    max-width: 900px;
+    margin: 80px auto 20px auto;
+    padding: 20px;
+    z-index: 2; /* Над overlay слоя */
+    position: relative;
+    color: white; /* Цвят на текста, за да е видим над overlay */
+}
+
+h1, h2 {
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    color: #fff;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Стил за секциите */
+.class-section, .news, .ranking {
+    margin-top: 30px;
+    padding: 20px;
+    z-index: 2; /* Над overlay слоя */
+    position: relative;
+}
+
+.class-section p, .news p, .ranking p {
+    margin-bottom: 10px;
+    margin-left: 50px;
+    text-align: center;
+}
+.section-image {
+    display: block;
+    width: 60%; 
+    height: auto;
+    margin: 20px auto; 
+    border: 2px solid #ccc; 
+    border-radius: 10px; 
+}
+
+
+.class-section h2, .news h2, .ranking h2 {
+    margin-bottom: 15px;
+    font-size: 1.9em;
+    color: white;
+}
+
+.class-section li {
+    color: white;
+}
+
+/* Стилове за формата за вход */
+.glass-container {
+    width: 300px;
+    position: relative;
+    z-index: 2; /* Над overlay слоя */
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid #fff;
+    padding: 20px;
+    top: 120px;
+}
+
+.glass-container::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.login-box {
+    max-width: 250px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 2; /* Над overlay слоя */
+}
+
+h2 {
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: -20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+input {
+    padding: 10px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 13px;
+}
+
+input::placeholder {
+    color: #fff;
+}
+
+input:focus {
+    outline: none;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 12px;
+    color: white;
+}
+
+.options input {
+    margin-right: 5px;
+    margin-top: 0px;
+}
+
+.options a {
+    text-decoration: none;
+    color: white;
+    margin-left: auto;
+}
+
+button {
+    background: #fff;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: transparent;
+    color: white;
+    outline: 1px solid #fff;
+}
+
+p {
+    font-size: 12px;
+    color: #fff;
+    margin-top: 15px;
+}
+
+#register {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Чат бутон */
+/* Бутон за чат */
+#chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 9999; /* Увеличаваме стойността на z-index за сигурност */
+}
+
+/* Чат прозорец */
+#chat-window {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* Увеличаваме стойността на z-index за сигурност */
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-hidden {
+    display: none;
+}
+
+#chat-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+#chat-content {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+/* Входно поле за чат */
+#chat-input {
+    border: 2px solid #ccc;
+    background-color: #f1f1f1;
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 10px;
+    color: black;
+    transition: border-color 0.3s ease;
+}
+
+#chat-input::placeholder {
+    color: black;
+}
+
+#send-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 0 0 10px 10px;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: 0;
+    height: 40px;
+    width: auto;
+}
+
+#minimize-button {
+    background-color: #003366;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: -15px;
+    left: 1px;
+    padding: 7px 12px;
+    border-radius: 50%;
+    z-index: 9999; /* Увеличаваме стойността на z-index за сигурност */
+    transition: background-color 0.3s ease;
+}
+
+#minimize-button:hover {
+    background-color: #002244;
+}
+
+/* Основни стилове на контейнера */
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Прозрачен фон */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 2;
+}
+
+/* Заглавие на контейнера */
+.container h1 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+/* Основни стилове на секциите със събития */
+.event-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2); /* Полупрозрачен фон */
+}
+
+/* Заглавие на секциите със събития */
+.event-section h2 {
+    color: #7c4dff;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+    border-bottom: 2px solid #7c4dff; /* Линия под заглавието */
+    padding-bottom: 10px;
+    color: darkblue;
+}
+
+/* Стилове на списъците със събития */
+.event-list {
+    list-style-type: none; /* Премахва стандартните маркери на списъците */
+    padding: 0;
+}
+
+/* Стилове на отделните събития */
+.event-list li {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #7c4dff; /* Линия около елемента */
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.3); /* Полупрозрачен фон за елемента */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Анимация при преглед */
+}
+
+/* Анимация на елементите при задържане */
+.event-list li:hover {
+    background-color: rgba(255, 255, 255, 0.5); /* Леко по-светъл фон при задържане */
+    transform: scale(1.02); /* Леко увеличаване при задържане */
+}
+
+/* Заглавие на елементите от списъка */
+.event-list li h3 {
+    color: #fff;
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+}
+
+/* Описание на елементите от списъка */
+.event-list li p {
+    color: #ddd;
+    margin: 0;
+}
+
+/* Допълнителни стилове */
+.event-section:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.1); /* Леко различен фон за нечетни секции */
+}
+
+.event-section:nth-child(even) {
+    background: rgba(255, 255, 255, 0.2); /* Леко различен фон за четни секции */
+}
+
+
+.container1 {
+    width: 80%;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Прозрачен фон */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 2;
+}
+
+/* Заглавие на контейнера */
+.container1 h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+/* Основен стил за контейнера */
+.container1 {
+    max-width: 900px;
+    margin: 20px auto;
+    margin-top: 70px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Прозрачен фон */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    color: white;
+    z-index: 2; /* Над overlay слоя */
+}
+
+/* Заглавие на контейнера */
+
+/* Стил за съдържанието на контейнера */
+.content {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.podcast h2 {
+    font-size: 1.8em;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.podcast p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+/* Стил за структурата на страницата */
+.structure {
+    margin-top: 20px;
+}
+
+.class-section5 {
+    margin-bottom: 30px;
+}
+
+.class-section5 h3 {
+    font-size: 1.6em;
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    cursor: pointer; /* Курсорът ще изглежда като бутон */
+}
+
+.section-content {
+    display: none; /* Скриване на съдържанието по подразбиране */
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2); /* Леко прозрачен фон */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.section-content.visible {
+    display: block; /* Показване на съдържанието при разширяване */
+}
+
+.section1 h4 {
+    font-size: 1.4em;
+    color: #007bff;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.subsection-content {
+    display: none; /* Скриване на съдържанието на подразделите по подразбиране */
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.3); /* Леко прозрачен фон */
+    border-radius: 8px;
+}
+
+.subsection-content.visible {
+    display: block; /* Показване на съдържанието при разширяване */
+}
+
+.test-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.test-link:hover {
+    text-decoration: underline;
+}
+
+/* Други стилове */
+h1, h2, h3, h4 {
+    color: #fff;
+}
+/* Основен контейнер за секциите */
+.main2 {
+    position: relative;
+    z-index: 2; /* Основното съдържание е над overlay */
+    padding: 20px;
+}
+
+.container20 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.class-section8, .class-section9, .class-section10 {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-top: 80px;
+}
+
+.class-section8 {
+    background-color: rgba(0, 0, 0, 0.2); /* Прозрачен фон за секцията 8 клас */
+
+color: white;
+}
+
+.class-section9 {
+    background-color: rgba(0, 0, 0, 0.2); /* Прозрачен фон за секцията 9 клас */
+color:white;
+}
+
+.class-section10 {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white; /* Прозрачен фон за секцията 10 клас */
+}
+/* Стилове за заглавието в main2 */
+.main2 h1 {
+    text-align: center; 
+    font-size: 32px; 
+    color: #333; 
+    margin-top: 70px; /* Разстояние отгоре */
+    margin-bottom: 20px; /* Разстояние между заглавието и съдържанието под него */
+    font-family: 'Arial', sans-serif; /* Основен шрифт на заглавието */
+    color: white;
+
+}
+.class-section8 h2, .class-section9 h2, .class-section10 h2 {
+    text-align: center;
+    color: white; 
+    margin: 0 0 10px 0; /* Разстояние отгоре и отдолу на заглавията */
+}
+
+.class-section8 ul, .class-section9 ul, .class-section10 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Премахва всички маргини на списъка */
+}
+
+.class-section8 li, .class-section9 li, .class-section10 li {
+    margin-bottom: 10px; /* Разстояние между елементите на списъка */
+}
+a
+{
+            color: green; 
+        }
+        .news-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .news-item {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+        .news-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .news-text {
+            flex: 1;
+            padding: 0 20px;
+            color: white;
+            z-index: 2;
+        }
+        .news-image {
+            flex: 1;
+            z-index: 2;
+        }
+        .read-more-link {
+    color: #007BFF; 
+    font-weight: bold; 
+}
+
+.read-more-link:hover {
+    color: red; /* Цвят при задържане на мишката над линка */
+    text-decoration: underline; /* Добавя подчертаване при задържане */
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебни материали</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body onload="displayDashboard()">
+    <div class="overlay"></div>
+
+    <nav>
+        <a href="home.html">Начало</a>
+        <a href="materials.html">Учебни материали</a>
+        <a href="about.html">Контрол на знанията</a>
+        <a href="calendar.html">Важни дати</a>
+        <a href="grades.html">Оценки</a>
+        <a href="javascript:void(0)" onclick="logout()">Изход</a>
+    </nav>
+
+    <div class="main2">
+        <h1>Учебни материали</h1>
+        <div class="container20">
+            <div class="class-section8">
+                <h2>8 клас</h2>
+                <ul>
+                    <li><a href="https://docs.google.com/presentation/d/15b8saCM8FrJKVzPwQHR1HWRkIdDZvUkl/edit?usp=share_link&ouid=116045817716652383307&rtpof=true&sd=true">Урок 10 - Създаване на уебсайт в WIX</a></li>
+                    <li><a href="https://docs.google.com/presentation/d/1koHWO9VcyoW0npzEx0qcFm9OdOBowWNq/edit?usp=share_link&ouid=116045817716652383307&rtpof=true&sd=true">Урок 11 - Вмъкване на Видео и Контакти в Wix сайт</a></li>
+                    <li>Урок 12 - Въведение в програмирането</li>
+                    <li>Урок 13 - Въведение в програмирането</li>
+                    <li>Урок 14 - Въведение в програмирането</li>
+                    <li>Урок 15 - Въведение в програмирането</li>
+                </ul>
+            </div>
+
+            <div class="class-section9">
+                <h2>9 клас</h2>
+                <ul>
+                    <li>Урок 10 - Въведение в програмирането</li>
+                    <li>Урок 11 - Работа с autocrat</li>
+                    <li>Урок 12 - Въведение в програмирането</li>
+                    <li>Урок 13 - Въведение в програмирането</li>
+                    <li>Урок 14 - Въведение в програмирането</li>
+                    <li>Урок 15 - Въведение в програмирането</li>
+                </ul>
+            </div>
+
+            <div class="class-section10">
+                <h2>10 клас</h2>
+                <ul>
+                    <li>Урок 10 - Създаване на уебсайт чрез HTML и CSS</li>
+                    <li>Урок 11 - Добавяне на изображения и видеоклип в HTML сайт</li>
+                    <li>Урок 12 - Създаване на "login" платоформа</li>
+                    <li>Урок 13 - Въведение в програмирането</li>
+                    <li>Урок 14 - Въведение в програмирането</li>
+                    <li>Урок 15 - Въведение в програмирането</li>
+                
+                </ul>
+            </div>
+        </div>
+
+        <div id="chat-window" class="chat-hidden">
+            <div id="chat-header">Задайте въпрос към учителя</div>
+            <button id="minimize-button" onclick="minimizeChatWindow()">_</button>
+            <div id="chat-content">
+                
+            </div>
+            <div id="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Напишете вашето съобщение..." />
+                <button id="send-button" onclick="sendMessage()">Изпрати</button>
+            </div>
+        </div>
+    </div>
+
+<footer class="text-center text-lg-start mt-auto" style="background-color: black; position: relative; z-index: 1; width: 100%; left: 0;">
+  
+  <div class="container p-4">
+    
+    <div class="row">
+      
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0" style="z-index: 2; position: relative;">
+        <h5 class="text-uppercase" style="color: white;">За нашия сайт</h5>
+        <p style="color: white; border: 2px solid white; padding: 15px; border-radius: 10px;">
+          Този сайт предоставя пълен и гъвкав достъп до необходимата информация за учебния процес. Тук може да намерите новини от дигиталния свят, учебни ресурси, таблица с класиране по успех, вашите оценки, както и място за достъп до съответните тестове и проекти!
+        </p>
+      </div>
+      
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0" style="z-index: 2; position: relative;">
+        <h5 class="text-uppercase" style="color: white;">Свържете се с нас</h5>
+        <p style="color: white; border: 2px solid white; padding: 15px; border-radius: 10px;">
+          Ако имате въпроси, предложения или затруднения, може да се свържете с учителя по предоставения "Чат на живо"!
+        </p>
+      </div>
+      
+    </div>
+    
+  </div>
+ 
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
+    © Сайтът е създаден от Александър Генев
+  </div>
+  
+</footer>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

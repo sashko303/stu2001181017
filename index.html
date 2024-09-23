@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход и Регистрация</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="glass-container">
+        <div class="login-box">
+            <h2>Вход</h2>
+            <form id="loginForm">
+                <input type="text" id="loginUsername" placeholder="Потребителско име" required>
+                <input type="password" id="loginPassword" placeholder="Парола" required>
+                <button type="button" onclick="login()">Вход</button>
+            </form>
+            <p>Нямате акаунт? <a href="#register" id="registerLink">Регистрация</a></p>
+        </div>
+
+        <div class="login-box">
+            <h2>Регистрация</h2>
+            <form id="registerForm" onsubmit="return registerUser()">
+                <input type="text" id="registerUsername" placeholder="Потребителско име" required>
+                <small>Изискване: Името трябва да е във формат <strong>ivan18_10a</strong>, където "ivan" е име, "18" е номер, а "10a" е клас.</small>
+                <input type="password" id="registerPassword" placeholder="Парола" required>
+                <small>Изискване: Паролата трябва да съдържа поне 8 символа.</small>
+                <select id="role" required>
+                    <option value="student">Ученик</option>
+                    <option value="teacher">Учител</option>
+                </select>
+                <button type="submit">Регистрация</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
